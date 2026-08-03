@@ -1,0 +1,8 @@
+# never commit calibration material or student work
+corpus/
+_txt/
+_sample/
+*.pdf
+PROGRESS.md
+test_notes.md
+__pycache__/
