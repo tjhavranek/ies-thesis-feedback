@@ -95,9 +95,13 @@ def find_main_body(text, is_tex):
     """Return the introduction-to-conclusion slice, or None if not confident.
 
     A thesis names its chapters twice: once in the table of contents and once where the
-    chapter actually starts. Taking the first match gives the contents entry and a body a
-    couple of pages long, so every candidate pair is tried and the longest plausible one
-    wins. If nothing plausible survives, we say so rather than report a wrong number.
+    chapter actually starts. The contents entry is a bare heading with nothing after it but
+    a page number or the next heading; the real chapter opening has a paragraph after it,
+    and that is what distinguishes them. Length alone cannot: the span always ends at the
+    same place, so the longest one always begins at the earliest match, which is the
+    contents entry. Where no candidate looks like a real opening, every pair is tried and
+    the longest plausible one wins. If nothing plausible survives, we say so rather than
+    report a wrong number.
     """
     lines = text.splitlines()
     candidates = tex_heading_candidates(lines) if is_tex else [l.strip() for l in lines]
@@ -108,8 +112,17 @@ def find_main_body(text, is_tex):
     if not intros or not conclusions:
         return None
 
+    def opens_with_prose(idx):
+        """A real chapter heading is followed by a sentence; a contents entry by a number."""
+        for j in range(idx + 1, min(idx + 4, len(lines))):
+            nxt = lines[j].strip()
+            if not nxt:
+                continue
+            return len(nxt) > 60 and len(nxt.split()) > 8
+        return False
+
     best = None
-    for intro_idx in intros:
+    for intro_idx in ([i for i in intros if opens_with_prose(i)] or intros):
         later = [j for j in conclusions if j > intro_idx]
         if not later:
             continue

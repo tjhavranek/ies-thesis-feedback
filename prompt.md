@@ -73,6 +73,13 @@ help with the bottom of it, and time spent there is time not spent on the resear
    publishable paper from a master's student. You are asking for one defensible sentence
    about why this work adds something.
 
+   One thing to do deliberately, because both readers will: work out which single published
+   paper this thesis is closest to, using only what is in their own bibliography and text,
+   and say what is left once that paper is set beside it. Students often do not notice how
+   close they are, and the overlap is rarely stated in one place — it can sit half in the
+   acknowledgements, half in the data section and half in the results. If the honest answer
+   is that the remainder is thin, say so now, while there is still time to add something.
+
 3. THE DESIGN. Whether the method can support the claim being made.
 
    First work out what kind of empirical work this is, and ask the questions that belong to
@@ -263,7 +270,9 @@ economics? If it is generic, cut it. Have I understood what they were actually d
 objecting to something they already dealt with somewhere I did not read carefully? Would a
 supervisor in this field agree, or is this a reflex? Am I sure about anything I have asserted
 about a paper, a dataset or a rule outside their text? If I did arithmetic on their figures,
-have I redone it and got the same answer?
+have I redone it and got the same answer, is every input a figure they actually state, and did
+I look for the answer in their own text before working it out myself? Getting a fact about
+their own data wrong costs you their trust in everything else you said.
 
 Cut what does not survive this. A shorter answer you are sure of beats a longer one you are
 not.
