@@ -11,7 +11,7 @@
 
 <header>
 <h1>Feedback on your thesis</h1>
-<p class="lead">It reads your draft the way your supervisor and opponent will, and tells you how to make it better.</p>
+<p class="lead">It reads your draft the way your supervisor and opponent will, and tells you how to make it better. It does not replace the thesis seminars. It gives you feedback beforehand, so more of the seminar is left for what AI cannot do.</p>
 <p class="disclaimer">This is not an official evaluation and it cannot grade you. Where it disagrees with your supervisor, your supervisor is right.</p>
 </header>
 
@@ -23,6 +23,7 @@
 <h3>Copy the prompt</h3>
 <button id="copyBtn" type="button" disabled aria-describedby="promptMeta">Copy the prompt</button>
 <p id="copyStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+<label class="level"><input type="checkbox" id="baToggle"> I am writing a bachelor's thesis</label>
 <p id="promptMeta" class="meta">Loading the prompt&hellip;</p>
 <p id="copyError" class="error" hidden></p>
 <details class="see-prompt">
@@ -46,7 +47,7 @@
 <li>
 <h3>Then ask it to check its own work</h3>
 <p>When it answers, send one more message: <em>&ldquo;Now check every point against my text. Drop any whose quotation you cannot find, and any that would be true of almost any economics thesis. Tell me which could change how a reader judges the thesis and which are an hour&rsquo;s work. Then print what survives, and keep your seminar questions and anything you said about declaring AI use.&rdquo;</em></p>
-<p class="aside">Worth the thirty seconds: it ranks the points and cuts the padding. It is not a check you can rely on by itself, so search your own file for any quotation before you act on it.</p>
+<p class="aside">It takes thirty seconds. It ranks the points and cuts the padding. It is not a check you can rely on by itself, so search your own file for any quotation before you act on it.</p>
 </li>
 
 </ol>
@@ -54,14 +55,14 @@
 
 <section class="notice" aria-labelledby="before-heading">
 <h2 id="before-heading">Before you paste anything</h2>
-<p>A chatbot sends whatever you paste to the company that runs it, such as OpenAI, Anthropic, or Google. Check that your supervisor is comfortable with this and that it fits your faculty's rules on generative AI. Using it this way counts as AI use, and Charles University requires you to declare it in your thesis &mdash; the template and guidance are at <a href="https://ai.cuni.cz/AI-81.html">ai.cuni.cz</a>. None of this should stop you: just know where your text goes before you send it.</p>
+<p>A chatbot sends whatever you paste to the company that runs it, such as OpenAI, Anthropic, or Google. Check that your supervisor is comfortable with this and that it fits your faculty's rules on generative AI. Using it this way counts as AI use, and Charles University requires you to declare it in your thesis. The template and guidance are at <a href="https://ai.cuni.cz/AI-81.html">ai.cuni.cz</a>. None of this should stop you. Know where your text goes before you send it.</p>
 </section>
 
 <details>
 <summary>What it will tell you</summary>
 <ul>
-<li>Whether your question is a real research question</li>
-<li>Whether your contribution is real</li>
+<li>Whether your question is a research question or only a topic</li>
+<li>Whether your thesis adds something new</li>
 <li>Whether your method can support the claim you are making</li>
 <li>How robust your results are</li>
 <li>How the writing reads</li>
@@ -75,19 +76,15 @@
 </details>
 
 <details>
-<summary>Better still: use Claude Code or Codex (recommended)</summary>
-<p>If you are serious about your thesis, install <strong>Claude Code</strong> or
-<strong>Codex</strong> &mdash; ideally both. You do not need to be a programmer. You open a
-terminal in the folder where your thesis lives and talk to it in English.</p>
-<p>It reads your real files rather than what you remembered to paste, and it can tell you
-<strong>whether your analysis code does what your methodology section claims</strong> &mdash;
-provided you give it your whole project folder rather than just a compiled PDF. A chatbot can
-only do this if you paste the code in as well, and it is where real problems hide. It also checks its own quotations
+<summary>Recommended: use Claude Code or Codex</summary>
+<p>For a deeper review, install <strong>Claude Code</strong> or
+<strong>Codex</strong>, and ideally both. No programming is needed: you open a terminal in the folder with your thesis and ask in plain English.</p>
+<p>It reads your files directly instead of what you remembered to paste, and it can tell you
+<strong>whether your analysis code does what your methodology section claims</strong>, provided you give it your whole project folder rather than a compiled PDF on its own. A chatbot can
+only do this if you paste the code in as well, and that is where serious problems turn up. It also checks its own quotations
 against your text before showing you anything.</p>
-<p>Both need a paid subscription. If you already pay for Claude or ChatGPT, the agent is
-included and you simply have not installed it yet.</p>
-<p>See <a href="advanced.md">advanced.md</a> for how. The button above still works perfectly
-well if you would rather not.</p>
+<p>Both need a paid subscription. If you already pay for Claude or ChatGPT, the agent comes with your subscription.</p>
+<p>See <a href="advanced.md">advanced.md</a> for how. The button above still works well if you would rather not.</p>
 </details>
 
 <noscript>
@@ -95,7 +92,7 @@ well if you would rather not.</p>
 </noscript>
 
 <footer>
-<p>Source: <a href="https://github.com/tjhavranek/ies-thesis-feedback">github.com/tjhavranek/ies-thesis-feedback</a>. <a href="LICENSE">MIT licence</a>. Institute of Economic Studies, Charles University.</p>
+<p>Source: <a href="https://github.com/tjhavranek/ies-thesis-feedback">github.com/tjhavranek/ies-thesis-feedback</a>. <a href="LICENSE">MIT licence</a>. Made by Tom&aacute;&scaron; Havr&aacute;nek, Institute of Economic Studies, Charles University. More tools, data and code at <a href="https://meta-analysis.cz">meta-analysis.cz</a>.</p>
 </footer>
 
 </main>
@@ -139,7 +136,7 @@ well if you would rather not.</p>
       if (!body) { throw new Error("empty prompt"); }
       promptContent = body;
       promptText.textContent = body;
-      promptMeta.textContent = "Prompt loaded — " + body.length.toLocaleString("en-US") + " characters.";
+      promptMeta.textContent = "Prompt loaded: " + body.length.toLocaleString("en-US") + " characters.";
       copyBtn.disabled = false;
     })
     .catch(function () {
@@ -180,7 +177,7 @@ well if you would rather not.</p>
     // Do NOT call showLoadError here: the prompt did load, and erasing it would
     // remove the student's last way of getting at it. Show it instead and select it.
     copyError.hidden = false;
-    copyError.innerHTML = "Your browser would not let the page copy for you. The prompt is open below — select it and press Ctrl+C (Cmd+C on a Mac). You can also open <a href=\"prompt.md\">prompt.md</a> and copy it there.";
+    copyError.innerHTML = "Your browser would not let the page copy for you. The prompt is open below. Select it and press Ctrl+C (Cmd+C on a Mac). You can also open <a href=\"prompt.md\">prompt.md</a> and copy it there.";
     var details = document.querySelector(".see-prompt");
     if (details) { details.open = true; }
     try {
@@ -196,14 +193,30 @@ well if you would rather not.</p>
     copyStatus.textContent = "Could not copy automatically. The prompt is shown below, ready to select.";
   }
 
+  // Bachelor's switch. Off by default; a link ending in ?ba turns it on.
+  var baToggle = document.getElementById("baToggle");
+  try {
+    var q = new URLSearchParams(window.location.search);
+    if (q.has("ba") || /^(ba|bachelor)/i.test(q.get("level") || "")) { baToggle.checked = true; }
+  } catch (e) { /* old browser: the switch still works by hand */ }
+
+  function textToCopy() {
+    if (!baToggle.checked) { return promptContent; }
+    var note = "This student is writing a bachelor's thesis, not a master's thesis. Follow the notes for bachelor's theses throughout.";
+    var t = promptContent.replace("helping a master's student", "helping a bachelor's student");
+    var cut = t.indexOf("\n\n");
+    return cut > 0 ? t.slice(0, cut) + "\n\n" + note + t.slice(cut) : note + "\n\n" + t;
+  }
+
   copyBtn.addEventListener("click", function () {
     if (!promptContent) { return; }
+    var text = textToCopy();
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(promptContent).then(onCopySuccess, function () {
-        if (fallbackCopy(promptContent)) { onCopySuccess(); } else { onCopyFailure(); }
+      navigator.clipboard.writeText(text).then(onCopySuccess, function () {
+        if (fallbackCopy(text)) { onCopySuccess(); } else { onCopyFailure(); }
       });
     } else {
-      if (fallbackCopy(promptContent)) { onCopySuccess(); } else { onCopyFailure(); }
+      if (fallbackCopy(text)) { onCopySuccess(); } else { onCopyFailure(); }
     }
   });
 })();

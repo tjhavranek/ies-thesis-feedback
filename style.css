@@ -114,3 +114,5 @@ a { color: var(--accent); }
   position: absolute; width: 1px; height: 1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
 }
+.level { display: flex; align-items: center; gap: 0.5rem; margin: 0.7rem 0 0; font-size: 0.95rem; color: var(--muted); cursor: pointer; }
+.level input { width: 1.05rem; height: 1.05rem; margin: 0; }

@@ -28,6 +28,9 @@ CHARS_PER_PAGE = 1800
 FULL_MIN_PAGES, FULL_MIN_CHARS = 50, 90_000
 FULL_MIN_PAGES_CS, FULL_MIN_CHARS_CS = 60, 108_000  # Czech or Slovak
 PART_MIN_PAGES, PART_MIN_CHARS = 15, 27_000
+# Faculty directive S_SO_003 (in force since 2 October 2023). Bachelor's minimums differ by language.
+BA_MIN_PAGES_EN, BA_MIN_CHARS_EN = 25, 45_000
+BA_MIN_PAGES_CS, BA_MIN_CHARS_CS = 30, 54_000
 SUPPORTED_EXTS = {".txt", ".md", ".tex", ".docx", ".pdf"}
 
 # Heading regexes match a WHOLE line (or, for .tex, an extracted section title)
@@ -224,9 +227,11 @@ def main():
         print(f"\nMain body (introduction to conclusion): {body_chars:,} characters incl. spaces, "
               f"{body_pages:.1f} standard pages, {body_words:,} words")
         for label, min_pages, min_chars in (
-            ("Full thesis in English", FULL_MIN_PAGES, FULL_MIN_CHARS),
-            ("Full thesis in Czech or Slovak", FULL_MIN_PAGES_CS, FULL_MIN_CHARS_CS),
-            ("First-part milestone", PART_MIN_PAGES, PART_MIN_CHARS),
+            ("Master's thesis in English", FULL_MIN_PAGES, FULL_MIN_CHARS),
+            ("Master's thesis in Czech or Slovak", FULL_MIN_PAGES_CS, FULL_MIN_CHARS_CS),
+            ("Master's first part (Seminar I)", PART_MIN_PAGES, PART_MIN_CHARS),
+            ("Bachelor's thesis in English", BA_MIN_PAGES_EN, BA_MIN_CHARS_EN),
+            ("Bachelor's thesis in Czech or Slovak", BA_MIN_PAGES_CS, BA_MIN_CHARS_CS),
         ):
             print(f"  {label} stated minimum is {min_pages} standard pages / {min_chars:,} characters; "
                   f"this measures {body_pages:.1f} pages / {body_chars:,} characters.")
