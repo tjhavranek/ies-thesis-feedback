@@ -2,7 +2,7 @@
 
 **Strongly recommended.** If you are writing a thesis in economics, install
 [Claude Code](https://claude.com/claude-code) or
-[Codex](https://developers.openai.com/codex/cli) , and ideally both. Setting one up takes about an hour.
+[Codex](https://developers.openai.com/codex/cli), and ideally both. Setting one up takes about an hour.
 
 You do not need to program. You open a terminal in your thesis folder and type what you want in English.
 
@@ -24,7 +24,7 @@ whether a method is still considered sound, what the current literature conclude
 ## Why both, if you can
 
 Claude Code and Codex are different models from different companies. Run the same question
-past both and you will get two different readings, . **Look hardest at the points where they disagree.** Where they agree, you can move on. This is the cheapest
+past both and you will get two different readings. **Look hardest at the points where they disagree.** Where they agree, you can move on. This is the cheapest
 form of a second opinion you will ever get, and it is the same logic as sending a paper to two
 referees.
 
