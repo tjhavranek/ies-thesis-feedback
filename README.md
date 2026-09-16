@@ -60,17 +60,27 @@ held against you. See [`reference.md`](reference.md).
 
 ## Two modes
 
-**Basic** is the button above: one prompt, any chatbot, nothing installed. This is the main
-route and almost everyone should use it.
+**Basic** is the button above: one prompt, any chatbot, nothing installed. It works, and if
+this is all you ever use, that is fine.
 
-**Advanced** is for students who already use Claude Code, Codex CLI or a similar agent. The
-agent reads your files directly, checks its quotations against your source, and can compare
-your analysis code against what your methodology section claims. See
-[`advanced.md`](advanced.md), which also covers running the heavier
+**Advanced is better, and worth setting up.** Install [Claude Code](https://claude.com/claude-code)
+or [Codex](https://developers.openai.com/codex/cli), and ideally both. You do not need to be a
+programmer — you open a terminal in your thesis folder and talk to it in English.
+
+It reads your real files instead of what you remembered to paste: your `.tex` or `.docx`, your
+`.bib`, your tables and your analysis code, together. It can tell you **whether your code does
+what your methodology section says it does**, which no chatbot can do and which is where real
+problems hide. It checks its own quotations against your text before showing you anything.
+
+Running both is better still, because they are different models: where they disagree is where
+you should look. Both need a paid subscription, and if you already pay for Claude or ChatGPT,
+the agent is included and you simply have not installed it yet.
+
+See [`advanced.md`](advanced.md), which also covers the heavier
 [mad-research](https://github.com/tjhavranek/mad-research) and
-[paper-workshop](https://github.com/tjhavranek/paper-workshop) reviews, with an honest warning
-attached: both were built for journal papers, neither has been tried on a thesis, and
-paper-workshop must never be allowed to rewrite yours.
+[paper-workshop](https://github.com/tjhavranek/paper-workshop) reviews, with an honest warning:
+both were built for journal papers, neither has been tried on a thesis, and paper-workshop must
+never be allowed to rewrite yours.
 
 ## Also here
 
