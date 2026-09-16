@@ -22,8 +22,8 @@ judged on quality, and a padded thesis reads as a padded thesis.
 **The first part, in Seminar I.** At least 15 standard pages, 27,000 characters of real text,
 with a full reference list. If your thesis is empirical you also show summary statistics —
 means and standard errors of your variables — which is how you demonstrate you actually have
-the data. The deadline is the end of December or the end of July depending on your semester,
-and it does not move.
+the data. The deadline is the end of December or the end of July depending on your semester.
+Treat it as fixed and take the exact date from your course Moodle.
 
 **The proposal.** Two to three pages, on the template, signed by you and your supervisor.
 Three hypotheses that some possible result could contradict, a specific plan for testing each
@@ -39,7 +39,7 @@ page, never from a document from last year, and never from a chatbot.
 
 Your supervisor and your opponent each write a report on the same four headings:
 
-| | |
+| Heading | What the reader is asked to judge |
 |---|---|
 | **Contribution** | Original ideas, critical thinking, a distinct value added |
 | **Methods** | Tools relevant to the question and adequate to your level; the topic comprehensively analysed |

@@ -35,8 +35,6 @@ It works out what you have sent and says so, then goes through your work in this
 - **Your results.** Robustness, uncertainty, and whether you delivered what the proposal
   promised.
 - **Your writing.** Whether the abstract says what you found and the tables can be read alone.
-- **The practical things**, briefly — length, what is due next, what the referee reports look
-  at.
 
 It quotes your own sentences so you can find what it is talking about, and it ends with two
 or three questions worth taking to your supervisor.
@@ -99,8 +97,10 @@ It is not official. Neither IES nor the faculty has endorsed it. It cannot tell 
 grade and it does not know your supervisor.
 
 It misses things a specialist in your field would catch, and it can be wrong with confidence.
-Push back when you disagree — and if it quotes a sentence you cannot find in your own draft,
-that finding is worthless, so please [open an issue](../../issues) and say so. Do not paste
+Push back when you disagree. And if it quotes a sentence that is not in what you sent it, that
+finding is worthless — search a few distinctive words rather than the whole sentence, since
+extraction from a PDF breaks hyphenated words, then please [open an issue](../../issues) and
+say so. Do not paste
 any part of a real thesis into a public issue.
 
 Deadlines and requirements change every academic year. Take dates from the current FSV
