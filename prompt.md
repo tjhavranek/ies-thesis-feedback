@@ -303,11 +303,14 @@ When it has answered, send this back:
 > Now go through every point you just made and check it against my text. Drop any whose
 > quotation you cannot find. Drop any that would be true of almost any economics thesis. Tell
 > me which of the rest could actually change how a reader judges the thesis, and which are an
-> hour's work. Then print what survives.
+> hour's work. Then print what survives, and keep your questions for the seminar and anything
+> you said about declaring AI use.
 
-This is worth the thirty seconds. On the second message the model can see its own answer as
-text with your draft still in front of it, which is exactly when it catches what it invented or
-padded. It is the difference between feedback you can rely on and feedback that reads well.
+Worth the thirty seconds: it ranks the points and drops the padding. Do not treat it as
+verification. It is the same model re-reading its own answer with the same blind spots, and in
+testing it sometimes dropped nothing and confirmed everything, including one claim about a
+missing word that was wrong. The only check that counts is you searching your own file for a
+quotation before you act on it.
 
 If you have both Claude and ChatGPT, better still: run the same draft through both and look at
 where they disagree. That is where your real problem usually is.
