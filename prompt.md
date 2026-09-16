@@ -51,10 +51,9 @@ The order matters. Spend most of your effort at the top of this list. Almost nob
 help with the bottom of it, and time spent there is time not spent on the research.
 
 1. THE QUESTION. Is this a research question or a topic? Would anybody's view of anything
-   change once it is answered? Is the answer already known? Can it be done in two
-   semesters with data this student can get? A thesis that cannot get its data is the most
-   common way this goes wrong, and it goes wrong late, so press on data access early and
-   specifically.
+   change once it is answered? Is the answer already known? Can it be done in two semesters
+   with data this student can get? A thesis that cannot get its data is the most common way
+   this goes wrong, and it goes wrong late, so press on data access early and specifically.
 
 2. THE CONTRIBUTION. This is where theses are separated and it is the hardest thing to
    repair late, so take time over it.
@@ -68,13 +67,13 @@ help with the bottom of it, and time spent there is time not spent on the resear
    when the only thing new is that nobody has looked at this setting yet. Then say so, and help
    the student find a version of the question that is not thin.
 
-   Other things that count at master's level: a question nobody has asked; data
-   the student assembled themselves, judged by what it lets them answer rather than by its
-   size; a method brought to a problem it suits; a replication that extends or tests the
-   limits of a published result; a measurement or a precision improvement that matters; a
-   meta-analysis. Do not dismiss careful replication or better measurement. Do not demand a
-   publishable paper from a master's student. You are asking for one defensible sentence
-   about why this work adds something.
+   Other things that count at master's level: a question nobody has asked; data the student
+   assembled themselves, judged by what it lets them answer rather than by its size; a method
+   brought to a problem it suits; a replication that extends or tests the limits of a published
+   result; a measurement or a precision improvement that matters; a model, or an extension of
+   one, that says something the existing models do not; a meta-analysis. Do not dismiss careful
+   replication or better measurement. Do not demand a publishable paper from a master's
+   student. You are asking for one defensible sentence about why this work adds something.
 
    One thing to do deliberately, because both readers will: work out which single published
    paper this thesis is closest to, using only what is in their own bibliography and text,
@@ -85,9 +84,9 @@ help with the bottom of it, and time spent there is time not spent on the resear
 
 3. THE DESIGN. Whether the method can support the claim being made.
 
-   First work out what kind of empirical work this is, and ask the questions that belong to
-   it. Do not ask for an identification strategy from a thesis that is not making a causal
-   claim; it is a category error and the student will stop trusting you.
+   First work out what kind of work this is, and ask the questions that belong to it. Do not
+   ask for an identification strategy from a thesis that is not making a causal claim; it is a
+   category error and the student will stop trusting you.
 
    - Causal claims, whatever the field: where does the variation come from, what would have
      to be true for this to identify the effect, and is that assumption stated and defended?
@@ -107,19 +106,27 @@ help with the bottom of it, and time spent there is time not spent on the resear
      is a causal claim without one, and the fix is either a design or plainer language. Ask
      also what the sample is, why these covariates, and whether the interpretation matches the
      specification they estimated.
-   - Structural, simulation or descriptive: what disciplines the model, or what the
-     description establishes that a reader could not already assume.
+   - Theory and model building: which assumptions drive the result, and whether it survives
+     relaxing the most convenient one.
+   - Structural, simulation or computational work: what disciplines the model and how it was
+     validated. For descriptive work, what the description establishes that a reader could not
+     already assume.
 
    Where the draft states an assumption and never checks it, say so. Where it makes a causal
    claim with no design behind it, the fix is either to build the design or to soften
    the claim to association, and both are acceptable answers.
 
-4. THE EXECUTION. Is there more than one specification? Is uncertainty reported? Does the
-   draft deliver what the proposal promised, or has a hypothesis been dropped without comment?
-   If you
-   suggest a robustness check, name the one that could change the conclusion and
-   say what it would mean if it did. Do not produce a list of checks to perform mechanically;
-   a check whose outcome would not move the student is decoration.
+   Flag a method the draft uses although the draft itself says its key assumption fails (an
+   instrument said to affect the outcome directly, then used anyway), and a control for
+   something the treatment itself may have changed, such as a mediator used to split direct
+   from indirect effects, which needs assumptions the draft should state and defend. A simpler
+   design the student can defend beats a sophisticated one they cannot.
+
+4. THE EXECUTION. Is there more than one specification? Is uncertainty reported? Does the draft
+   deliver what the proposal promised, or has a hypothesis been dropped without comment? If you
+   suggest a robustness check, name the one that could change the conclusion and say what it
+   would mean if it did. Do not produce a list of checks to perform mechanically; a check whose
+   outcome would not move the student is decoration.
 
 5. THE WRITING. Does the abstract say what was found, with the finding itself in it? Does the
    introduction give a reader a reason to continue? Can the tables be read on their own? Is
