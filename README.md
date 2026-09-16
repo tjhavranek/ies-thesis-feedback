@@ -1,146 +1,99 @@
-# ies-thesis-feedback
+# Feedback on your thesis
 
-A set of prompts for students writing a master's thesis at the Institute of Economic Studies,
-Charles University. You paste one into a chat with a current model, along with your draft, and it
-reads your work the way your opponent will.
+For students writing a master's thesis at the Institute of Economic Studies, Charles
+University.
 
-It is built for the two thesis seminars, JEM001 and JEM002, and it covers every stage from having
-an idea to the week before you submit.
+Send an AI chatbot whatever you have — an idea, your proposal, half a draft, a finished
+thesis — and get it read the way your supervisor and your opponent will read it, with
+concrete suggestions for making it better.
 
-It does not replace your supervisor. It clears the problems that a supervisor should not have to
-spend time on, so that the time you get with one goes on the judgement only they can supply.
+**Use it before your seminar.** Then the time you get with an economist is spent on the
+things AI cannot do: whether your question matters in this literature, whether your design
+is credible, and whether you can defend what you wrote.
 
----
+**→ [Start here](https://tjhavranek.github.io/ies-thesis-feedback/)** — one page, one button,
+nothing to install.
 
-## Start here
-
-| You have | Use |
-|---|---|
-| A topic and no proposal | [`basic/prompt_idea.md`](basic/prompt_idea.md) |
-| A proposal or a draft | [`basic/prompt_review.md`](basic/prompt_review.md) |
-| Anything, at any time | [`basic/prompt_form_sweep.md`](basic/prompt_form_sweep.md) |
-
-Before the design review, fill in a [Seminar Card](shared/card.md). It takes twenty minutes and it
-is what the tool reads first.
-
-Read [`docs/privacy.md`](docs/privacy.md) before you paste an unpublished draft anywhere.
-
----
+Or do it by hand: open [`prompt.md`](prompt.md), copy the text between the two markers, paste
+it into any chatbot, and attach your draft after it.
 
 ## What it does
 
-**It reads as the opponent.** Your thesis gets two reports. Across 230 filed reports at this
-institute, supervisors award about seven points more than opponents on the same thesis. The
-opponent is the binding reader, so that is who this simulates. It says so in its own output, and
-it is not predicting what your supervisor will write.
+It works out what you have sent and says so, then goes through your work in this order:
 
-**It routes on your design before it says anything.** A volatility-spillover thesis has no
-identification strategy, and asking it for one is a category error. Six routes — causal
-microeconometrics, macro time series, financial econometrics, forecasting and machine learning,
-meta-analysis, structural and descriptive — each with its own failure modes.
+- **Your question.** Is it a research question or a topic? Can it be done with data you can
+  actually get?
+- **Your contribution.** The one that decides how the thesis is received: does your work say
+  why the answer *here* could differ from what is already known?
+- **Your design.** Whether the method can support the claim. It works out what kind of
+  empirical work you are doing first, so a volatility thesis is not asked for an
+  identification strategy.
+- **Your results.** Robustness, uncertainty, and whether you delivered what the proposal
+  promised.
+- **Your writing.** Whether the abstract says what you found and the tables can be read alone.
+- **The practical things**, briefly — length, what is due next, what the referee reports look
+  at.
 
-**It runs ten structural checks** that fire on things anyone can verify in the text: a causal claim
-with no design, a hypothesis nothing could refute, a contribution that is only a new country, a
-headline comparison with no test, an assumption named but never checked, a promise from the
-proposal that the thesis never delivers. Full list in [`shared/caps.md`](shared/caps.md).
-
-**It asks before it tells.** Section 2 of your card is your own statement of the main threat to
-your design and what you did about it. Leave it blank and the tool will not discuss your
-identification at all; it returns the questions you need to answer instead. The gap between your
-answer and its answer is the part worth reading.
-
-**It quotes.** Every finding carries a verbatim sentence from your draft. If you cannot find that
-sentence in your own file, the finding is void. Discard it and report it.
+It quotes your own sentences so you can find what it is talking about, and it ends with two
+or three questions worth taking to your supervisor.
 
 ## What it will not do
 
-It will not write any part of your thesis. It will not produce a number, a table or a summary
-statistic, even as an illustration. It will not give you a score, points or a predicted grade at
-any stage. It will not model or predict a named referee. It will not help you declare less AI use
-than you made.
+It will not write your thesis, produce numbers or tables, count your characters, or give you
+a grade or predict one. It will not guess a deadline. It will not help anyone write a
+supervisor's or opponent's report on someone else's thesis.
 
-The refusal to write your content is not enforceable and nobody pretends it is; you can open
-another window. But you will stand in front of someone who asks why you chose that specification.
-The reports this was calibrated on end with questions like *"Provide information about the shock
-identification strategy that you used in your VAR analysis, and justify your choice."* Text you
-did not think through is text you cannot defend out loud.
+On grades specifically: the two reports on the same thesis routinely disagree, and half of
+all filed reports recommend an A. A predicted mark would be noise, and you would end up
+improving the number instead of the thesis.
 
-## Why there is no predicted grade
+## Before you paste anything
 
-The real form is filled inconsistently. One report in the sample awards 30 points in a box whose
-maximum is 20 and totals it at 99 anyway. Referees disagree sharply with each other: one thesis
-was marked down for comparing forecast errors with no statistical test while another doing the same
-thing received full marks. Half of all reports recommend an A, so a good grade is weak evidence of
-a good thesis.
+A chatbot sends what you give it to the company that runs it. Check your supervisor is
+content, and check your data licence if your data is not public. Using this counts as AI use,
+which the university requires you to declare in your thesis — declaring is normal and is not
+held against you. See [`reference.md`](reference.md).
 
-A number built on that would be noise, and a number is the kind of thing students optimise
-against. So the tool gives verdicts and repairs: for each of the four rubric categories, whether
-the draft is defensible, at risk, or not defensible as written, and what specific change would lift
-it. See [`shared/rubric_locked.md`](shared/rubric_locked.md).
+## Two modes
 
----
+**Basic** is the button above: one prompt, any chatbot, nothing installed. This is the main
+route and almost everyone should use it.
 
-## Contents
+**Advanced** is for students who already use Claude Code, Codex CLI or a similar agent. The
+agent reads your files directly, checks its quotations against your source, and can compare
+your analysis code against what your methodology section claims. See
+[`advanced.md`](advanced.md), which also covers running the heavier
+[mad-research](https://github.com/tjhavranek/mad-research) and
+[paper-workshop](https://github.com/tjhavranek/paper-workshop) reviews, with an honest warning
+attached: both were built for journal papers, neither has been tried on a thesis, and
+paper-workshop must never be allowed to rewrite yours.
 
-```
-shared/
-  rubric_locked.md        the four IES categories, quoted from the report form
-  card.md                 the Seminar Card
-  stages.md               the five stages, and how they map to the six seminars
-  caps.md                 design routing, the ten checks, contribution, robustness
-  evidence_discipline.md  what a finding must carry, and the rule you enforce
-basic/
-  prompt_idea.md          before you have a proposal
-  prompt_review.md        the main tool
-  prompt_form_sweep.md    formatting, tables, citations, language
-docs/
-  ai_declaration.md       declaring AI use, and what actually protects you
-  privacy.md              data rules, no-paste mode, which account to use
-  for_supervisors.md      how this fits a seminar, and its limits
-scripts/
-  card_check.py           mechanical completeness check over a folder of cards
-tests/fixtures/           synthetic drafts with planted defects, one per route
-```
+## Also here
 
----
+- **[`reference.md`](reference.md)** — what good looks like at each stage, the length rules,
+  how the four referee headings work, and what reliably costs students marks. Worth ten
+  minutes even if you never use the prompt.
+- **[`count.py`](count.py)** — optional. Counts characters and standard pages, because a
+  chatbot cannot count and you need to know whether you are near the minimum. Runs on your own
+  machine, sends nothing.
+- **[`advanced.md`](advanced.md)** — the agentic route.
+- **[`AGENTS.md`](AGENTS.md)** — what an agent is told to do, if you want to check.
 
-## How it was built
+## Honest limits
 
-Calibrated against 115 IES master's theses and the 230 supervisor and opponent reports filed with
-them, all published in the Charles University repository. The rubric is quoted from that form
-rather than paraphrased. The distribution of scores, the gap between supervisors and opponents,
-and the measured shares of referee attention are in
-[`shared/rubric_locked.md`](shared/rubric_locked.md).
+It is not official. Neither IES nor the faculty has endorsed it. It cannot tell you your
+grade and it does not know your supervisor.
 
-Two findings shaped the design more than the rest. Referees spend more of their written reports on
-formatting and typos than on identification, which is why the form sweep is a separate tool you
-run first and often. And an award-winning thesis in the sample states that its models were tuned to
-maximise performance on the sample it then evaluates them on, and was given full marks for methods
-by its opponent. A machine catches that in one pass. The point of structural checks is consistency
-that human referees, reading under time pressure, do not have.
+It misses things a specialist in your field would catch, and it can be wrong with confidence.
+Push back when you disagree — and if it quotes a sentence you cannot find in your own draft,
+that finding is worthless, so please [open an issue](../../issues) and say so. Do not paste
+any part of a real thesis into a public issue.
 
-This is the thesis-seminar application of the same approach as
-[`tjhavranek/erc-ai-feedback`](https://github.com/tjhavranek/erc-ai-feedback), which does this for
-ERC grant proposals. Related: [`tjhavranek/paper-workshop`](https://github.com/tjhavranek/paper-workshop)
-and [`tjhavranek/mad-research`](https://github.com/tjhavranek/mad-research).
+Deadlines and requirements change every academic year. Take dates from the current FSV
+academic calendar and your course Moodle, never from here and never from a chatbot.
 
-## Limits
+## Licence
 
-Calibrated for IES master's theses. Not for bachelor's theses, dissertations, or other faculties.
-
-It catches structural problems. It does not judge whether your idea is interesting, and it will
-confidently miss things specific to your field. Where it disagrees with your supervisor, your
-supervisor wins; bring the disagreement to the seminar as a yes-or-no question.
-
-The rubric and the course requirements change. The versions here were verified on 2026-08-03. If
-you are reading this a year later, check before relying on it.
-
-## Licence and maintenance
-
-MIT. Developed at the Institute of Economic Studies, Charles University, for JEM001 and JEM002.
-
-The IES report form and course materials quoted here remain the property of the Institute.
-
-Corrections to the rubric, and any case where the tool invented a quote, belong in GitHub Issues.
-A fabricated quote is a release-blocking bug; please report it. Do not paste your draft or anyone
-else's into a public issue.
+MIT. Built at the Institute of Economic Studies, Charles University. The approach follows
+[erc-ai-feedback](https://github.com/tjhavranek/erc-ai-feedback) and
+[gauk-ai-feedback](https://github.com/tjhavranek/gauk-ai-feedback).

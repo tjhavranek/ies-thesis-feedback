@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback on your thesis</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+
+<header>
+<h1>Feedback on your thesis</h1>
+<p class="lead">It reads your draft the way your supervisor and opponent will, and tells you how to make it better.</p>
+<p class="disclaimer">This is not an official evaluation and it cannot grade you. Where it disagrees with your supervisor, your supervisor is right.</p>
+</header>
+
+<section aria-labelledby="steps-heading">
+<h2 id="steps-heading" class="visually-hidden">Three steps to get feedback</h2>
+<ol class="steps">
+
+<li>
+<h3>Copy the prompt</h3>
+<button id="copyBtn" type="button" disabled aria-describedby="promptMeta">Copy the prompt</button>
+<p id="copyStatus" class="visually-hidden" role="status" aria-live="polite"></p>
+<p id="promptMeta" class="meta">Loading the prompt&hellip;</p>
+<p id="copyError" class="error" hidden></p>
+<details class="see-prompt">
+<summary>See the prompt</summary>
+<pre id="promptText">Loading&hellip;</pre>
+</details>
+</li>
+
+<li>
+<h3>Open any AI chatbot</h3>
+<p>ChatGPT, Claude, and Gemini all work. Use whichever one you already have.</p>
+</li>
+
+<li>
+<h3>Paste the prompt, then attach or paste your draft</h3>
+<p>Paste the prompt into the chat, then add your draft. If your chatbot lets you attach files, attaching your Word or PDF document is easier and works better than pasting the text in.</p>
+<p>You can send an idea, a proposal, part of a draft, or a whole thesis. You do not need to say which.</p>
+</li>
+
+</ol>
+</section>
+
+<section class="notice" aria-labelledby="before-heading">
+<h2 id="before-heading">Before you paste anything</h2>
+<p>A chatbot sends whatever you paste to the company that runs it, such as OpenAI, Anthropic, or Google. Check that your supervisor is comfortable with this and that it fits your faculty's rules on generative AI. Using it this way counts as AI use, and Charles University requires you to declare it in your thesis. None of this should stop you: just know where your text goes before you send it.</p>
+</section>
+
+<details>
+<summary>What it will tell you</summary>
+<ul>
+<li>Whether your question is a real research question</li>
+<li>Whether your contribution is real</li>
+<li>Whether your method can support the claim you are making</li>
+<li>How robust your results are</li>
+<li>How the writing reads</li>
+<li>What to do next</li>
+</ul>
+</details>
+
+<details>
+<summary>Optional: count your characters</summary>
+<p>The repository has a small script, <a href="count.py">count.py</a>, for students who want to check the length of their draft. It runs on your own computer and sends nothing anywhere. Most students will not need it.</p>
+</details>
+
+<details>
+<summary>Advanced: if you use Claude Code, Codex or another agent</summary>
+<p>An agent can read your actual files instead of you pasting them, so it sees your LaTeX
+source, your <code>.bib</code> and your analysis code together, and it checks its own
+quotations against your text before showing you anything. It can also tell you whether your
+code does what your methodology section says it does.</p>
+<p>See <a href="advanced.md">advanced.md</a>. If you do not already use one of these tools,
+ignore this: the button above is the main route and it is not a lesser version.</p>
+</details>
+
+<noscript>
+<p class="notice">This page needs JavaScript to copy the prompt for you. You can still open <a href="prompt.md">prompt.md</a> and copy the text between the marker lines by hand.</p>
+</noscript>
+
+<footer>
+<p>Source: <a href="https://github.com/tjhavranek/ies-thesis-feedback">github.com/tjhavranek/ies-thesis-feedback</a>. <a href="LICENSE">MIT licence</a>. Institute of Economic Studies, Charles University.</p>
+</footer>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var BEGIN_MARKER = "=== PROMPT BEGIN ===";
+  var END_MARKER = "=== PROMPT END ===";
+  var HAND_COPY_MSG = "The prompt could not be loaded automatically. Open <a href=\"prompt.md\">prompt.md</a> and copy the text between the marker lines by hand.";
+
+  var copyBtn = document.getElementById("copyBtn");
+  var copyStatus = document.getElementById("copyStatus");
+  var promptMeta = document.getElementById("promptMeta");
+  var promptText = document.getElementById("promptText");
+  var copyError = document.getElementById("copyError");
+
+  var promptContent = null;
+
+  function showLoadError(message) {
+    copyBtn.disabled = true;
+    promptMeta.hidden = true;
+    copyError.hidden = false;
+    copyError.innerHTML = message;
+    promptText.textContent = "Not loaded.";
+  }
+
+  fetch("prompt.md")
+    .then(function (res) {
+      if (!res.ok) { throw new Error("fetch failed"); }
+      return res.text();
+    })
+    .then(function (text) {
+      var startIdx = text.indexOf(BEGIN_MARKER);
+      var endIdx = text.indexOf(END_MARKER);
+      if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) {
+        throw new Error("markers not found");
+      }
+      var body = text.slice(startIdx + BEGIN_MARKER.length, endIdx).trim();
+      if (!body) { throw new Error("empty prompt"); }
+      promptContent = body;
+      promptText.textContent = body;
+      promptMeta.textContent = "Prompt loaded — " + body.length.toLocaleString("en-US") + " characters.";
+      copyBtn.disabled = false;
+    })
+    .catch(function () {
+      showLoadError(HAND_COPY_MSG);
+    });
+
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.left = "-1000px";
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    var ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (e) {
+      ok = false;
+    }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function onCopySuccess() {
+    var original = "Copy the prompt";
+    copyBtn.textContent = "Copied";
+    copyStatus.textContent = "Prompt copied to clipboard.";
+    setTimeout(function () {
+      copyBtn.textContent = original;
+    }, 2000);
+  }
+
+  function onCopyFailure() {
+    showLoadError("Copying did not work in this browser. Open <a href=\"prompt.md\">prompt.md</a> and copy the text between the marker lines by hand.");
+  }
+
+  copyBtn.addEventListener("click", function () {
+    if (!promptContent) { return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(promptContent).then(onCopySuccess, function () {
+        if (fallbackCopy(promptContent)) { onCopySuccess(); } else { onCopyFailure(); }
+      });
+    } else {
+      if (fallbackCopy(promptContent)) { onCopySuccess(); } else { onCopyFailure(); }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
