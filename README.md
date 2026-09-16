@@ -10,7 +10,7 @@ University.
 Send an AI chatbot whatever you have (an idea, your proposal, half a draft or a finished thesis) and get it read the way your supervisor and your opponent will read it, with
 concrete suggestions for making it better.
 
-**Use it before your seminar.** Then the time you get with an economist is spent on the
+**If you use it, use it before your seminar.** Then the time you get with an economist is spent on the
 things AI cannot do: whether your question matters in this literature, whether your design
 is credible, and whether you can defend what you wrote. Using it is optional, and nobody is required to use AI for their thesis.
 
