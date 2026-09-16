@@ -15,8 +15,8 @@ Stata code — all together, as they really are. Nothing is lost to copying and 
 nothing is left out because you forgot to include it.
 
 **It can read your code against your text.** Ask it whether your analysis code does what your
-methodology section claims. This is the single most valuable thing on this page: no chatbot can
-do it, your supervisor rarely has time to, and the gap between what students say they did and
+methodology section claims. This is the single most valuable thing on this page: a chatbot
+can only do it if you paste the code in as well, your supervisor rarely has time to, and the gap between what students say they did and
 what their code actually does is where real problems hide. It needs your project folder, with
 the `.do` or `.R` files sitting alongside the draft — a compiled PDF on its own is not enough.
 
@@ -63,7 +63,9 @@ check my thesis in ../my-thesis
 
 `AGENTS.md` tells the agent what to do: read `prompt.md`, follow it, read your files rather
 than asking you to paste them, verify every quotation against your text, and change nothing.
-Claude Code and Codex both read that file automatically.
+Codex reads that file on its own. Claude Code looks for `CLAUDE.md` instead, so the repository
+carries a one-line `CLAUDE.md` that points at it. If you are not sure it loaded, just say
+"read AGENTS.md and follow it" as your first message.
 
 Three things worth asking for specifically:
 

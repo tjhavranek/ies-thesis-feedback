@@ -49,8 +49,8 @@ It will not write your thesis, produce numbers or tables, count your characters,
 a grade or predict one. It will not guess a deadline. It will not help anyone write a
 supervisor's or opponent's report on someone else's thesis.
 
-On grades specifically: the two reports on the same thesis routinely disagree, and half of
-all filed reports recommend an A. A predicted mark would be noise, and you would end up
+On grades specifically: the two reports on the same thesis routinely disagree, and in a recent
+sample of filed reports half recommended an A. A predicted mark would be noise, and you would end up
 improving the number instead of the thesis.
 
 ## Before you paste anything
@@ -71,7 +71,8 @@ programmer — you open a terminal in your thesis folder and talk to it in Engli
 
 It reads your real files instead of what you remembered to paste: your `.tex` or `.docx`, your
 `.bib`, your tables and your analysis code, together. It can tell you **whether your code does
-what your methodology section says it does**, which no chatbot can do and which is where real
+what your methodology section says it does**, which a chatbot can do only if you paste the code
+in as well, and which is where real
 problems hide. It checks its own quotations against your text before showing you anything.
 
 Running both is better still, because they are different models: where they disagree is where
