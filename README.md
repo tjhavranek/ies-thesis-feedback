@@ -12,7 +12,7 @@ concrete suggestions for making it better.
 
 **Use it before your seminar.** Then the time you get with an economist is spent on the
 things AI cannot do: whether your question matters in this literature, whether your design
-is credible, and whether you can defend what you wrote.
+is credible, and whether you can defend what you wrote. Using it is optional, and nobody is required to use AI for their thesis.
 
 **[Start here](https://tjhavranek.github.io/ies-thesis-feedback/).** The page has one button and needs nothing installed.
 
