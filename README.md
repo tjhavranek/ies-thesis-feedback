@@ -36,8 +36,12 @@ It works out what you have sent and says so, then goes through your work in this
   promised.
 - **Your writing.** Whether the abstract says what you found and the tables can be read alone.
 
-It quotes your own sentences so you can find what it is talking about, and it ends with two
-or three questions worth taking to your supervisor.
+It also tells you roughly **where you should be by now** — students are often behind without
+knowing it, and finding out late is how theses go wrong.
+
+It quotes your own sentences so you can find what it is talking about, it checks its own points
+before it shows them to you and drops the ones it cannot stand behind, and it ends with two or
+three questions worth taking to your supervisor.
 
 ## What it will not do
 
