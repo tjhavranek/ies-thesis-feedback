@@ -170,7 +170,23 @@ well if you would rather not.</p>
   }
 
   function onCopyFailure() {
-    showLoadError("Copying did not work in this browser. Open <a href=\"prompt.md\">prompt.md</a> and copy the text between the marker lines by hand.");
+    // Do NOT call showLoadError here: the prompt did load, and erasing it would
+    // remove the student's last way of getting at it. Show it instead and select it.
+    copyError.hidden = false;
+    copyError.innerHTML = "Your browser would not let the page copy for you. The prompt is open below — select it and press Ctrl+C (Cmd+C on a Mac). You can also open <a href=\"prompt.md\">prompt.md</a> and copy it there.";
+    var details = document.querySelector(".see-prompt");
+    if (details) { details.open = true; }
+    try {
+      var range = document.createRange();
+      range.selectNodeContents(promptText);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      promptText.scrollIntoView({ block: "nearest" });
+    } catch (e) {
+      // selection is a convenience; the text is visible either way
+    }
+    copyStatus.textContent = "Could not copy automatically. The prompt is shown below, ready to select.";
   }
 
   copyBtn.addEventListener("click", function () {
