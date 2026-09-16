@@ -23,7 +23,7 @@ of July for the summer one. The course FAQ says end of June for the summer semes
 disagree; go by the course page or ask your seminar teacher. Either way it is fixed and does
 not move.
 
-**The proposal.** Two to three pages, on the template, signed by you and your supervisor.
+**The proposal.** Two to three pages, on the template. The first upload can be unsigned. The final version, signed by you and your supervisor, is due by your third seminar.
 Three hypotheses that some possible result could contradict, a specific plan for testing each
 one, a named data source, a statement of what you expect to add, an outline, and at least five
 references.

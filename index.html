@@ -135,7 +135,7 @@ against your text before showing you anything.</p>
       var body = text.slice(startIdx + BEGIN_MARKER.length, endIdx).trim();
       if (!body) { throw new Error("empty prompt"); }
       promptContent = body;
-      promptText.textContent = body;
+      promptText.textContent = body; refreshDisplay();
       promptMeta.textContent = "Prompt loaded: " + body.length.toLocaleString("en-US") + " characters.";
       copyBtn.disabled = false;
     })
@@ -207,6 +207,9 @@ against your text before showing you anything.</p>
     var cut = t.indexOf("\n\n");
     return cut > 0 ? t.slice(0, cut) + "\n\n" + note + t.slice(cut) : note + "\n\n" + t;
   }
+
+  function refreshDisplay() { if (promptContent) { promptText.textContent = textToCopy(); } }
+  baToggle.addEventListener("change", refreshDisplay);
 
   copyBtn.addEventListener("click", function () {
     if (!promptContent) { return; }
