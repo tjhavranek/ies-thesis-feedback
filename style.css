@@ -66,6 +66,7 @@ h3 { font-size: 1.1rem; margin: 0 0 0.5rem; }
 
 #copyBtn:disabled { opacity: 0.5; cursor: not-allowed; }
 .meta { font-size: 0.85rem; color: var(--muted); margin: 0.6rem 0 0; }
+.aside { font-size: 0.9rem; color: var(--muted); margin: 0.5rem 0 0; }
 .error { font-size: 0.9rem; margin: 0.6rem 0 0; }
 
 .notice {

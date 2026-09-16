@@ -15,7 +15,11 @@ is credible, and whether you can defend what you wrote.
 nothing to install.
 
 Or do it by hand: open [`prompt.md`](prompt.md), copy the text between the two markers, paste
-it into any chatbot, and attach your draft after it.
+it into a chatbot, and attach your draft after it.
+
+Use **ChatGPT** or **Claude**. Both handle academic work well. Gemini will run the prompt, but
+it is currently the weaker of the three for this, so reach for it last. A paid account reads a
+long draft better than a free one; on a free account, send a chapter at a time.
 
 ## What it does
 
