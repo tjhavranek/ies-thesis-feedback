@@ -30,8 +30,8 @@ It works out what you have sent and says so, then goes through your work in this
 - **Your contribution.** The one that decides how the thesis is received: does your work say
   why the answer *here* could differ from what is already known?
 - **Your design.** Whether the method can support the claim. It works out what kind of
-  empirical work you are doing first, so a volatility thesis is not asked for an
-  identification strategy.
+  empirical work you are doing first, so a volatility thesis is not expected to have
+  an identification strategy.
 - **Your results.** Robustness, uncertainty, and whether you delivered what the proposal
   promised.
 - **Your writing.** Whether the abstract says what you found and the tables can be read alone.

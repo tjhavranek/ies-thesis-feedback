@@ -26,6 +26,7 @@ from pathlib import Path
 
 CHARS_PER_PAGE = 1800
 FULL_MIN_PAGES, FULL_MIN_CHARS = 50, 90_000
+FULL_MIN_PAGES_CS, FULL_MIN_CHARS_CS = 60, 108_000  # Czech or Slovak
 PART_MIN_PAGES, PART_MIN_CHARS = 15, 27_000
 SUPPORTED_EXTS = {".txt", ".md", ".tex", ".docx", ".pdf"}
 
@@ -91,28 +92,42 @@ def tex_heading_candidates(lines):
     return candidates
 
 def find_main_body(text, is_tex):
-    """Return the introduction-to-conclusion slice, or None if not confident."""
+    """Return the introduction-to-conclusion slice, or None if not confident.
+
+    A thesis names its chapters twice: once in the table of contents and once where the
+    chapter actually starts. Taking the first match gives the contents entry and a body a
+    couple of pages long, so every candidate pair is tried and the longest plausible one
+    wins. If nothing plausible survives, we say so rather than report a wrong number.
+    """
     lines = text.splitlines()
     candidates = tex_heading_candidates(lines) if is_tex else [l.strip() for l in lines]
+    total = len(text)
 
-    intro_idx = next((i for i, c in enumerate(candidates) if c and RE_INTRO.match(c)), None)
-    if intro_idx is None:
+    intros = [i for i, c in enumerate(candidates) if c and RE_INTRO.match(c)]
+    conclusions = [i for i, c in enumerate(candidates) if c and RE_CONCLUSION.match(c)]
+    if not intros or not conclusions:
         return None
 
-    conclusion_idx = next(
-        (i for i in range(intro_idx + 1, len(candidates)) if candidates[i] and RE_CONCLUSION.match(candidates[i])),
-        None,
-    )
-    if conclusion_idx is None:
+    best = None
+    for intro_idx in intros:
+        later = [j for j in conclusions if j > intro_idx]
+        if not later:
+            continue
+        conclusion_idx = later[-1]  # the chapter, not a mention in the contents
+        end_idx = len(lines)
+        for i in range(conclusion_idx + 1, len(candidates)):
+            if candidates[i] and (RE_REFERENCES.match(candidates[i]) or RE_APPENDIX.match(candidates[i])):
+                end_idx = i
+                break
+        body = chr(10).join(lines[intro_idx:end_idx])
+        if best is None or len(body) > len(best):
+            best = body
+
+    # A real main body is most of the document. Anything tiny means we locked on to the
+    # table of contents or a stray mention, and a confident wrong number is worse than none.
+    if best is None or total == 0 or len(best) < 0.25 * total:
         return None
-
-    end_idx = len(lines)
-    for i in range(conclusion_idx + 1, len(candidates)):
-        if candidates[i] and (RE_REFERENCES.match(candidates[i]) or RE_APPENDIX.match(candidates[i])):
-            end_idx = i
-            break
-
-    return "\n".join(lines[intro_idx:end_idx])
+    return best
 
 def detect_references(text):
     lines = text.splitlines()
@@ -130,10 +145,10 @@ def detect_references(text):
 
 def detect_summary_stats(text):
     lower = text.lower()
-    if re.search(r"descriptive statistics|summary statistics", lower):
-        return "yes"
     keywords = ("mean", "std. dev", "std dev", "standard deviation", "minimum", "maximum", "observations")
     hits = sum(1 for kw in keywords if kw in lower)
+    if re.search(r"descriptive statistics|summary statistics", lower):
+        hits += 1  # the phrase is one signal, not proof: it also appears in "we report no ..."
     if hits >= 3:
         return "yes"
     return "not sure" if hits >= 1 else "no"
@@ -143,6 +158,12 @@ def counts(text):
     return chars, chars / CHARS_PER_PAGE, len(text.split())
 
 def main():
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
+
     parser = argparse.ArgumentParser(description="Measure the length of a thesis draft. Counts only -- no grading.")
     parser.add_argument("path", help="path to a .txt, .md, .tex, .docx or .pdf file")
     args = parser.parse_args()
@@ -190,7 +211,8 @@ def main():
         print(f"\nMain body (introduction to conclusion): {body_chars:,} characters incl. spaces, "
               f"{body_pages:.1f} standard pages, {body_words:,} words")
         for label, min_pages, min_chars in (
-            ("Full-thesis", FULL_MIN_PAGES, FULL_MIN_CHARS),
+            ("Full thesis in English", FULL_MIN_PAGES, FULL_MIN_CHARS),
+            ("Full thesis in Czech or Slovak", FULL_MIN_PAGES_CS, FULL_MIN_CHARS_CS),
             ("First-part milestone", PART_MIN_PAGES, PART_MIN_CHARS),
         ):
             print(f"  {label} stated minimum is {min_pages} standard pages / {min_chars:,} characters; "

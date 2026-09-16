@@ -15,9 +15,10 @@ Stata code — all together, as they really are. Nothing is lost to copying and 
 nothing is left out because you forgot to include it.
 
 **It can read your code against your text.** Ask it whether your analysis code does what your
-methodology section claims. This is the single most valuable thing on this page. No chatbot
-can do it, your supervisor rarely has time to, and the gap between what students say they did
-and what their code does is where real problems hide.
+methodology section claims. This is the single most valuable thing on this page: no chatbot can
+do it, your supervisor rarely has time to, and the gap between what students say they did and
+what their code actually does is where real problems hide. It needs your project folder, with
+the `.do` or `.R` files sitting alongside the draft — a compiled PDF on its own is not enough.
 
 **It checks its own quotations.** Before it shows you anything, it can go back to your files
 and confirm that every sentence it quoted is really there. A chatbot cannot, which is why

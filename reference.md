@@ -22,8 +22,10 @@ judged on quality, and a padded thesis reads as a padded thesis.
 **The first part, in Seminar I.** At least 15 standard pages, 27,000 characters of real text,
 with a full reference list. If your thesis is empirical you also show summary statistics —
 means and standard errors of your variables — which is how you demonstrate you actually have
-the data. The deadline is the end of December or the end of July depending on your semester.
-Treat it as fixed and take the exact date from your course Moodle.
+the data. The JEM001 page gives the deadline as the end of December for the winter semester or the end
+of July for the summer one. The course FAQ says end of June for the summer semester, so the two
+disagree; go by the course page or ask your seminar teacher. Either way it is fixed and does
+not move.
 
 **The proposal.** Two to three pages, on the template, signed by you and your supervisor.
 Three hypotheses that some possible result could contradict, a specific plan for testing each
@@ -91,11 +93,14 @@ structure for thinking about the whole thesis, not just the defence:
 1. **Importance** — why this topic matters, in plain terms.
 2. **Problem formulation** — your hypotheses, briefly.
 3. **Methodology and data** — what you did and why it was the right approach.
-4. **Results** — what you found.
-5. **Contribution** — what is new. This is the part to get right.
+4. **Contribution** — what is new. This is the part to get right.
+5. **Response to comments from the reports** — careful answers to what your supervisor and
+   opponent raised. Do not skip this one: you can read both reports before the defence, and
+   answering them well is much of how the defence goes.
 
-At the defence the committee has both reports in front of them and has read your thesis. How
-you answer the questions in the reports matters as much as the thesis itself.
+At the defence, the committee member assigned to your thesis has read it and both reports
+closely; the rest of the committee has the reports in front of them. How you answer the
+questions in those reports matters as much as the thesis itself.
 
 ## Things that reliably cost students marks
 
