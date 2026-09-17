@@ -64,8 +64,8 @@ which the university requires you to declare in your thesis. Declaring it is nor
 **Basic** is the button above: one prompt, any chatbot, nothing installed. It works, and if
 this is all you ever use, that is fine.
 
-**Advanced mode is better.** Install [Claude Code](https://claude.com/claude-code)
-or [Codex](https://developers.openai.com/codex/cli), and ideally both. No programming is needed: you open a terminal in your thesis folder and write to it in plain English.
+**Advanced mode is better.** Use [Claude Code](https://claude.com/claude-code)
+or [Codex](https://developers.openai.com/codex/cli), and ideally both. The desktop apps make it easy, with no terminal and no programming: Claude Code is the Code tab in the [Claude app](https://claude.com/download), and Codex comes inside the [ChatGPT app](https://chatgpt.com/download/). You open your thesis folder and write to it in plain English.
 
 It reads the files themselves, so nothing depends on what you remembered to paste: your `.tex` or `.docx`, your
 `.bib`, your tables and your analysis code, together. It can tell you **whether your code does
@@ -73,8 +73,9 @@ what your methodology section says it does**, which a chatbot can do only if you
 in as well, and which is where serious problems turn up. It checks its own quotations against your text before showing you anything.
 
 Running both helps more, because they are different models: where they disagree is where
-you should look. Both need a paid subscription, and if you already pay for Claude or ChatGPT,
-you already have the agent and only need to install it.
+you should look. Claude Code needs a paid Claude plan. Codex also works on a free ChatGPT
+account, though with small limits. If you already pay for Claude or ChatGPT, you already have
+the agent and only need to install the app.
 
 See [`advanced.md`](advanced.md), which also covers the heavier
 [mad-research](https://github.com/tjhavranek/mad-research) and

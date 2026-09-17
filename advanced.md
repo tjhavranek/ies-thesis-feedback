@@ -1,10 +1,14 @@
 # Advanced mode: use a coding agent
 
-**Strongly recommended.** If you are writing a thesis in economics, install
+**Strongly recommended.** If you are writing a thesis in economics, use
 [Claude Code](https://claude.com/claude-code) or
-[Codex](https://developers.openai.com/codex/cli), and ideally both. Setting one up takes about an hour.
+[Codex](https://developers.openai.com/codex/cli), and ideally both.
 
-You do not need to program. You open a terminal in your thesis folder and type what you want in English.
+The easy way in is the desktop app. Claude Code is the Code tab in the
+[Claude app](https://claude.com/download), and Codex comes inside the
+[ChatGPT app](https://chatgpt.com/download/). Install it, sign in, open your thesis folder and
+type what you want in English. You need no terminal and no programming. If you prefer a
+terminal, both run there too.
 
 ## What an agent does that a chatbot does not
 
@@ -32,20 +36,24 @@ If you can only have one, either is fine. Do not agonise over the choice.
 
 ## What it costs
 
-Both need a paid subscription, at roughly the price of a textbook per month. Claude Code comes
-with a Claude subscription; Codex comes with a ChatGPT subscription. Many students already pay
+Claude Code comes with a paid Claude subscription, at roughly the price of a textbook per month.
+Codex comes with ChatGPT and also works on a free account, though with small limits. Many students already pay
 for one of these, in which case you already have the agent and only need to install it.
 
 If money is tight, use the [basic mode](README.md) on a free chatbot. It runs the same review prompt.
 
 ## How to use it on your thesis
 
-Install the agent, then clone this repository and open the agent in its folder:
+Put a copy of this repository next to your thesis folder. Without a terminal: on the
+[repository page](https://github.com/tjhavranek/ies-thesis-feedback) click **Code**, then
+**Download ZIP**, and unzip it. With a terminal:
 
 ```
 git clone https://github.com/tjhavranek/ies-thesis-feedback
 cd ies-thesis-feedback
 ```
+
+Open that folder in the agent. In the desktop app, choose it as the folder to work in.
 
 Then ask, in plain English:
 
