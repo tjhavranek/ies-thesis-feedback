@@ -108,6 +108,6 @@ academic calendar and your course Moodle, never from here and never from a chatb
 
 ## Licence
 
-MIT. Built at the Institute of Economic Studies, Charles University, by Tomáš Havránek ([meta-analysis.cz](https://meta-analysis.cz)). The approach follows
+MIT (see [LICENSE](LICENSE)). The IES form and course materials quoted here remain the Institute's property ([NOTICE.md](NOTICE.md)). Built at the Institute of Economic Studies, Charles University, by Tomáš Havránek ([meta-analysis.cz](https://meta-analysis.cz)). The approach follows
 [erc-ai-feedback](https://github.com/tjhavranek/erc-ai-feedback) and
 [gauk-ai-feedback](https://github.com/tjhavranek/gauk-ai-feedback).
