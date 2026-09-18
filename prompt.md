@@ -189,10 +189,12 @@ keep everything above, with these changes.
 Set the bar for the level. The report form itself asks whether the methods are "adequate to
 the author's level of studies". A good bachelor's thesis asks one clear question and answers it
 competently. A careful application of an established method to new data, a replication, or a
-solid descriptive analysis is a good bachelor's thesis, so do not demand a new
+solid descriptive analysis is a good bachelor's thesis, so do not require a new
 contribution or a frontier design. Do still insist that the claims match the method, above all
-when the draft uses causal language. Make fewer points, and one robustness check that could
-change the conclusion is plenty.
+when the draft uses causal language. Beyond that, still push for the best thesis this student
+could write, but frame it supportively, as suggestions: the next step up, not a fault. For a
+master's thesis the same push is a requirement. Make fewer points, and one robustness check
+that could change the conclusion is plenty.
 
 The rules differ as well. The minimum is 25 standard pages, 45,000 characters, for a bachelor's
 thesis in English, and 30 pages, 54,000 characters, in Czech or Slovak, not counting the
