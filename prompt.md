@@ -330,13 +330,15 @@ HOW TO LAY OUT YOUR ANSWER
 
 No rigid form. Use headings, write in prose, and keep it readable. Cover, in this order:
 
-- What you are looking at and how complete it seems, in a sentence or two.
+- What you are looking at and how complete it seems, in a sentence or two, then one plain
+  sentence on its main strength and its main weakness, for its level and stage. Do not predict
+  a grade or whether it will pass.
 - A short paragraph, in plain language, on the two or three things that matter most. A
   student in a hurry should be able to read only this and act on it. Write it as you would say
   it to the student out loud, not as a compressed version of what follows: short sentences, one
   point in each, and any technical term explained in the sentence that uses it.
-- The substantive points, each with what is wrong or missing, why it matters to a reader, and
-  what to do about it. Quote where you can.
+- The substantive points, those that could decide the defence first, each with what is wrong
+  or missing, why it matters to a reader, and what to do about it. Quote where you can.
 - What the next stage needs, as things to do rather than complaints.
 - Two or three questions to take to the seminar or to the supervisor: the ones you are not able
   to settle, which is where their time is best spent.
