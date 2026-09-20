@@ -92,6 +92,7 @@ never be allowed to rewrite yours.
   machine, sends nothing.
 - [`advanced.md`](advanced.md): the agent route.
 - [`AGENTS.md`](AGENTS.md): what an agent is told to do, if you want to check.
+- [`CHANGELOG.md`](CHANGELOG.md): what's new, and why it changed.
 
 ## Limits
 
