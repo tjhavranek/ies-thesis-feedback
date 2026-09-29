@@ -3,6 +3,15 @@
 Changes to the prompt and the page, newest first. Colleagues who teach the seminars test the
 tool on real theses and proposals, and most of what follows comes from what they found.
 
+## 29 September 2026
+
+- For a meta-analysis thesis, the tool now uses the supervisors' notes for meta-analysis theses.
+  It reads them if you attach them, or opens them at
+  [meta-analysis.cz/ai/thesis-notes.md](https://meta-analysis.cz/ai/thesis-notes.md) if your
+  chatbot can open web pages, and it tells you whether it read them. It uses them for questions
+  as well, and points you to [meta-analysis.cz/ai](https://meta-analysis.cz/ai/) for questions
+  about methods.
+
 ## 19 September 2026
 
 - The answer opens with one sentence on the main strength and the main weakness of what you
