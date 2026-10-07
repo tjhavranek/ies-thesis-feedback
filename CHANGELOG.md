@@ -3,6 +3,20 @@
 Changes to the prompt and the page, newest first. Colleagues who teach the seminars test the
 tool on real theses and proposals, and most of what follows comes from what they found.
 
+## 7 October 2026
+
+- "Could decide the defence" is kept for weaknesses that seriously undermine the contribution,
+  the design or the credibility of the results, and each point is marked on its own. When none
+  is found, the answer says so and still says what would take the work further. Points that
+  could decide the defence come first.
+- For a meta-analysis, the tool judges the work by the best practice at
+  [meta-analysis.cz](https://meta-analysis.cz) and names the methods it expects, even when the
+  chatbot cannot open web pages. The page also points meta-analysis students to
+  [meta-analysis.cz/ai](https://meta-analysis.cz/ai/) for questions about methods.
+- Smaller fixes from testing on 24 simulated submissions: no repeated question about your
+  seminar when you have already said, no needless hedging of facts the tool was given, a
+  concrete next step for bachelor's theses, and the formal form of address in Czech and Slovak.
+
 ## 29 September 2026
 
 - For a meta-analysis thesis, the tool now uses the supervisors' notes for meta-analysis theses.
